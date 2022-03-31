@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express Lab</title>
+  </head>
+  <body>
+    <h1>Skills as of <%= time %> </h1>
+    <ul>
+      <% skills.forEach(function (s) { %>
+        <li>
+          <a href="/skills/<%= s.id %> ">
+            <%= s.skill %> - <%= s.app ? 'applied in real world' : 'have not applied in real world' %>
+          </a>
+          <form action="/skills/<%= s.id %>?_method=DELETE"
+            class="delete-form" method="POST">
+            <button type="submit">Delete Skill</button>
+          </form>
+        </li>
+          <% }); %>  
+    </ul>
+    <a href="/skills/new">Add Skill</a>
+  </body>
+</html>
