@@ -7,4 +7,3 @@
 - models/skill.js
 - views/skills
 - controllers/skills.js
-
